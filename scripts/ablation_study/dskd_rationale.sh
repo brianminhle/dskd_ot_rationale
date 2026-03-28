@@ -65,7 +65,7 @@ export PYTHONPATH=${BASE_PATH}
 
 for KD_RATE in "${KD_RATES[@]}"; do
     SETTING=criterion=${CRITERION}__${CONFIG}__teacher=${TEACHER_MODEL_TYPE}__kd^rate=${KD_RATE}__kd^temp=${KD_TEMP}__tea^temp=${TEA_TEMP}__epoch=${EPOCH}__bsz=${BATCH_SIZE}x${GRAD_ACC}x${GPUS_PER_NODE}=$((BATCH_SIZE * GRAD_ACC * GPUS_PER_NODE * NNODES))__lr=${LR}
-    SAVE_PATH="${BASE_PATH}/outputs/${CKPT_TYPE}/${CKPT_NAME}/${TASK}/${DATASET}/${DATASET_NAME}/${SETTING}"
+    SAVE_PATH="${BASE_PATH}/outputs/"
     mkdir -p "${SAVE_PATH}"
 
     OPTS=""
