@@ -18,14 +18,14 @@ DISTRIBUTED_ARGS="--nproc_per_node $GPUS_PER_NODE \
                   --master_port $MASTER_PORT"
 
 # model
-BASE_PATH=/home/aac/DSKD
+BASE_PATH=/cm/home/minhla4/dskd_ot_rationale-main
 CKPT_TYPE="tinyllama"
 CKPT_NAME="tinyllama-1.1b-3T"
 CKPT_PATH="${BASE_PATH}/model_hub/${CKPT_TYPE}/${CKPT_NAME}"
 TEACHER_MODEL_TYPE="mistral"  # gpt2, qwen, mistral, llama2
 TEACHER_MODEL_NAME="mistral-7b-v0.1"
-TEACHER_MODEL_PATH="${BASE_PATH}/model_hub/${TEACHER_MODEL_TYPE}/${TEACHER_MODEL_NAME}"
-TEACHER_PEFT_PATH="/cm/home/minhla4/dskd_ot_rationale-main/outputs/mistral/mistral-7b-v0.1/sft/criterion=cross_entropy__lora-rank=256-alpha=8-dropout=0.1-bf16__epoch=10__bsz=8x1x4=32__lr=0.001/epoch8_step2864_loss3.0764_rougel35.0321"
+TEACHER_MODEL_PATH="mistralai/Mistral-7B-v0.1"
+TEACHER_PEFT_PATH="/cm/home/minhla4/dskd_ot_rationale-main/criterion=cross_entropy__lora-rank=256-alpha=8-dropout=0.1-bf16__epoch=10__bsz=8x1x4=32__lr=0.001"
 # data
 DATASET_NAME="dolly"
 DATA_DIR="${BASE_PATH}/data/${DATASET_NAME}/"
